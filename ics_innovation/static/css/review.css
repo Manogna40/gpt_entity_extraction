@@ -1,0 +1,112 @@
+.main-container{
+    display: flex;
+}
+.doc-review.rounded, .entity-review.rounded{
+    border-radius: 1.25rem!important;
+    /* height: 430px; */
+    height:calc(100vh - 146px);
+    background-color: white;
+    margin-top: 51px;
+  /* width: 480px; */
+}
+.doc-review.rounded{
+  /* width: 480px; */
+  margin-right: 20px;
+  margin-left: 51px;
+}
+.entity-review.rounded{
+    /* width: 764px; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.card.preview-ent{
+  Width: 351px;
+  Height: 81px;
+  margin-top: 11px;
+  margin-left: 39.5px;
+  background-color: #F8F9FF;
+  border: #E8EAF2 solid 1px;
+  box-shadow: 0 0 60px 0 rgb(0 0 0 / 4%);
+}
+
+.pdf-preview-canvas {
+  width: 100%;
+  height: calc(100vh - 165px);
+  margin-top: 10px;
+  /* margin-left: 10px; */
+}
+
+.entity-container{
+  margin-top: -100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+}
+.csv_btn{
+  margin-left: 37%;
+  margin-bottom: auto;
+}
+.csv-block{
+  margin-left: 20%;
+  margin-bottom: auto;
+  margin-top: 100px;
+
+}
+#csv_download_file{
+  margin-left: 233px;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #0066BA;
+  color: #0066BA;
+  position: fixed;
+  margin-top: -15px;
+}
+
+.sub-text ,.description-text,.entity-text-preview{
+  text-align: left;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+
+.sub-text {
+  font-size: 20px;
+  font-weight: 500 !important;
+  height: 2em;
+  line-height: 1em;
+  font-size: 20px;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* .sub-text:hover{
+  overflow: visible; 
+  white-space: normal;
+  height:auto;  
+} */
+.description-text{
+  font-size: 9px;
+
+}
+
+.entity-text-preview{
+  font-size: 13px;
+  margin-top: 10px;
+  font-weight: 900 !important;
+}
+
+.csv_img{
+  margin-top: -73px;
+  position: fixed;
+  margin-left: 265px;
+}
+
+.h-65{
+  height: 65% !important;
+}
+
+.w-90{
+  width: 90% !important;
+}

@@ -1,0 +1,83 @@
+{% extends "ui_index.html" %}
+{% load static %}
+{% block content %}
+<div class="extract-entities-block" id="extract_entities_block">
+  <!--SECTION one -->
+  <form enctype="multipart/form-data" method="post" action="/">
+    {% csrf_token %}
+    <div class="left rounded shadow-sm ml-4 mr-4 mt-5">
+      <div class="drag-area d-flex">
+        <div class="">
+          <button class="btn cursor-pointer" type="button"><img src="../static/img/upload_img.PNG" class="upd_img"/></button>
+        </div>
+        <div class="">
+          <header>Drag a Document/Click here to upload</header>
+        </div>
+        <div class="">
+          <button id="extract_btn" type="button">Upload</button>
+        </div>
+        <input type="file" name="media" hidden>
+      </div>
+    </div>
+    <!--SECTION tabs -->
+    <div class="tabs-bar ml-4 mt-4" data-toggle="buttons-radio">
+      <button name="tab-select" type="button" class="btn tab-btn" id="btn_all" data-category="All">All</button>
+      <button name="tab-select" type="button" class="btn tab-btn" id="btn_dre" data-category="Drug Related Entities">Drug Related Entities</button>
+      <button name="tab-select" type="button" class="btn tab-btn" id="btn_pre" data-category="Patient Related Entities">Patient Related Entities</button>
+      <button name="tab-select" type="button" class="btn tab-btn" id="btn_adev" data-category="Adverse Event">Adverse Event</button>
+      <button name="tab-select" type="button" class="btn tab-btn" id="btn_cust" data-category="Custom">Custom</button>
+      <input type="text" class="selected-category" name="category" hidden>
+    </div>
+    <!--SECTION TWO -->
+    <div class="right mt-4">
+      <div class="right-left-cont-show-entities right-left-cont rounded shadow-sm ml-4 mr-4">
+        <p class="entity-header">Available Entities to Extract</p>
+        <div class="row entity-row"></div>
+      </div>
+      <div class="right-right-cont rounded shadow-sm ml-3">
+        <p class="entity-header-selected">Entities Selected</p>
+        <div class="entity-row-selected"></div>
+      </div>
+      <div class="add-entities right-left-cont rounded shadow-sm ml-4 mr-4 row d-none w-100 h-25" id="add_entities">
+        <div class="row mt-3 mb-4">
+          <div class="pl-5 pb-1 pt-3 column ">
+            <input type="text" class="form-control entity-input" name="entities">
+          </div>
+          {% for i in no_of_inputs %}
+            <div class="pl-5 pb-1 pt-3 column  additional-add-document-type  d-none">
+              <input type="text"  class="form-control entity-input"  name="entities">
+              <img src="../static/img/x-circle.svg" alt="delete" class="btn delete-doc-type" type="button">
+            </div>
+          {% endfor %}
+          <div class="pl-5 pb-1 pt-3 column">
+            <button class="btn upload-docs-fields" id="upload-docs" type="button" title="Maximum of 5 Entites can be added"><img src="../static/img/plus-lg.svg" alt="add" class="add_new_d_type"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button id="submit_btn" type="button" class="btn" >Submit</button>
+    <input id="submit_form_btn" type="submit" class="btn" val="Submit" hidden/>
+    <!-- </form> -->
+  </form>
+</div>
+
+<div class="modal fade" id="alert_limit" tabindex="-1" role="dialog" aria-labelledby="alert_limitLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body alert-popup-body">
+        You can only select 5 Entities
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'underscore/underscore-min.js' %}"></script>
+<script src="{% static 'js/extract.js' %}"></script>
+{% endblock %}

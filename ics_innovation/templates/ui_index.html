@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novartis</title>
+    <link rel="shortcut icon" href="{%  static 'img/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome/all.min.css' %}">
+    <link href="{% static 'css/googlefonts/css2.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/review.css' %}">
+</head>
+<body class="bg-light">
+  <nav class="navbar nav-scroller bg-body shadow-sm justify-content-start">
+    <a href="/"><img src="{% static 'img/novartis_logo.svg' %}" alt="novartis" class="logo ml-3"></a>
+    <header class="main-header ml-5"><a href="/">Entity Extraction</a></header>
+      <!-- <button class="btn" ><a href="#"><img src="{% static 'img/profile.png' %}" class="logout_img"/></a></button> -->
+  </nav>
+  <div class="container-fluid">
+    <div class="main_body">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </div>
+</body>
+</html>

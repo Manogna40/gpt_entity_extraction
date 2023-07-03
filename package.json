@@ -1,0 +1,24 @@
+{
+  "name": "nvs_lftsft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vinothsm/nvs_lftsft.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vinothsm/nvs_lftsft/issues"
+  },
+  "homepage": "https://github.com/vinothsm/nvs_lftsft#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.1",
+    "jquery": "^3.5.1",
+    "underscore": "^1.13.4"
+  }
+}

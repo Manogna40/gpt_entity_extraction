@@ -1,0 +1,15 @@
+{% extends "ui_index.html" %} {% block content %}
+
+<h3>{{ val }}</h3>
+<form action="/add_value/" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <input type="file" name="media">
+
+    {% for i in ids %}
+        <input type="checkbox" name="entities" id="entity_"+{{i}} value="Entity "+{{i}}>
+        <label for="entity_"+{{i}}>Entity {{i}}</label>
+    {% endfor %}
+
+    <input type="submit" value="Add">
+</form>
+{% endblock %}

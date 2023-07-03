@@ -1,0 +1,39 @@
+{% extends "ui_index.html" %}
+{% load static %}
+{% block content %}
+<div class="preview-block" id="preview_block">
+    <div class="main-container col-11">
+      <!--SECTION one -->
+      <div class="doc-review rounded shadow-sm col-5">
+        <div class="preview-container">
+          <embed  
+        src="{% static staticpath %}"
+        class='pdf-preview-canvas'
+    >
+        </div>
+      </div>    
+    <!--SECTION TWO -->
+      <div class="entity-review rounded shadow-sm col-7">
+        <div class='csv-block'>
+          <button class="btn csv_btn"><img src="{% static 'img/csv_img.PNG' %}" class="csv_img"/></button>
+          <a href='#' id='csv_download_file'>Download File</a>
+        </div>
+        <div class="loader d-flex justify-content-center align-items-center h-75">          
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        <div class="entity-container h-65 mb-3">
+          <div class="entity-block">
+          </div>
+        </div>
+        <div class="model-output p-4 h-25 w-90 overflow-auto d-none mt-2">
+        </div>
+      </div>
+    </div>
+</div>
+<script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'underscore/underscore-min.js' %}"></script>
+<script src="{% static 'js/review.js' %}"></script>
+{% endblock %}
